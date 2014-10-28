@@ -3,7 +3,7 @@
 // Try to force a login to Profile Pic if possible
 if(!Me::$loggedIn)
 {
-	Me::redirectLogin("/login", URL::auth_unifaction_com());
+	Me::redirectLogin("/login", URL::unifaction_com());
 }
 
 // Process profile pic upload (if applicable)
@@ -101,7 +101,7 @@ else
 	<div style="display:inline-block; padding:30px; vertical-align:top;">
 	<h3>You avatar is ready!</h3>
 	<a class="button" href="/">Upload New Avatar</a>
-	<a class="button" href="' . URL::auth_unifaction_com() . '">Return to My UniFaction</a>
+	<a class="button" href="' . URL::unifaction_com() . '">Return to My UniFaction</a>
 	</div>';
 }
 
