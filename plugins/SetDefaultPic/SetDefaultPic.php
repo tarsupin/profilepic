@@ -48,7 +48,7 @@ class SetDefaultPic extends API {
 		if(isset($this->data['uni_id']) and isset($this->data['title']))
 		{
 			// Process the API & Call Data
-			$eachSize = array("small", "medium", "large");
+			$eachSize = array("small", "medium", "large", "huge");
 			$success = true;
 			
 			foreach($eachSize as $size)

@@ -15,8 +15,8 @@ if(Form::submitted("propic-upload"))
 	$imageUpload = new ImageUpload($_FILES['image']);
 	
 	// Set your image requirements
-	$imageUpload->maxHeight = 1400;
-	$imageUpload->maxWidth = 1800;
+	$imageUpload->maxHeight = 3000;
+	$imageUpload->maxWidth = 3000;
 	$imageUpload->maxFilesize = 1024 * 3000;			// 3 megabytes max
 	$imageUpload->saveMode = Upload::MODE_OVERWRITE;
 	
@@ -26,7 +26,7 @@ if(Form::submitted("propic-upload"))
 		$success = true;
 		$image = new Image($imageUpload->tempPath, $imageUpload->width, $imageUpload->height, $imageUpload->extension);
 		
-		$eachSize = array("large" => 128, "medium" => 64, "small" => 46);
+		$eachSize = array("huge" => 170, "large" => 128, "medium" => 64, "small" => 46);
 		
 		foreach($eachSize as $size => $dimensions)
 		{
@@ -72,7 +72,7 @@ if($propicTitle = Database::selectValue("SELECT title FROM avatars WHERE uni_id=
 {
 	echo '
 	<div style="display:inline-block; padding:30px; vertical-align:top;">
-		<img src="' . ProfilePic::image(Me::$id, "large") . '?t=' . time() . '" />
+		<img src="' . ProfilePic::image(Me::$id, "huge") . '?t=' . time() . '" />
 		<h3 style="text-align:center;">My Profile Picture</h3>
 		<p style="text-align:center; font-weight:strong;">' . $propicTitle . '</p>
 	</div>';
